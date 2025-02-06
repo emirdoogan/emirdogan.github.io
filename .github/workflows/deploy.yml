@@ -29,10 +29,11 @@ jobs:
         with:
           node-version: 18
       
-      - name: Install dependencies
+      - name: Clean install dependencies
         run: |
-          npm install
-          npm list
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm install --legacy-peer-deps
       
       - name: Build
         run: |
