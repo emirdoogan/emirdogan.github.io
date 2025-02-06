@@ -4,7 +4,7 @@ import BackgroundSVG from '../components/BackgroundSVG';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,12 +26,20 @@ const Home = () => {
     });
   };
 
+  useEffect(() => {
+    controls.start({
+      scale: 1,
+      transition: { duration: 0.3 },
+    });
+  }, [controls]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
+      key="home-page"
     >
       <BackgroundSVG />
       <div className="page-container">
