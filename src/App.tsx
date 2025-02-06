@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AnimatePresence } from 'framer-motion';
@@ -134,30 +134,22 @@ const customGlobalStyles = {
   },
 };
 
-function AnimatedRoutes() {
-  const location = useLocation();
-  
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Routes location={location} key={location.pathname}>
-        <Route index element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </AnimatePresence>
-  );
-}
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <GlobalStyles styles={customGlobalStyles} />
-      <Router basename="/">
+      <Router>
         <Navbar />
-        <AnimatedRoutes />
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </AnimatePresence>
       </Router>
     </ThemeProvider>
   );
