@@ -40,6 +40,10 @@ const Navbar = () => {
           to={item.path}
           key={item.text}
           onClick={handleDrawerToggle}
+          sx={{
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
         >
           <ListItemText primary={item.text} />
         </ListItem>
@@ -96,12 +100,12 @@ const Navbar = () => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better mobile performance
+          keepMounted: true,
         }}
       >
         {drawer}
       </Drawer>
-      <Toolbar /> {/* This empty Toolbar acts as a spacer */}
+      <Toolbar />
     </>
   );
 };
