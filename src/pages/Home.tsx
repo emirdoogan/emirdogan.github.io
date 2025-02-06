@@ -5,6 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import { useState, useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -113,7 +114,8 @@ const Home = () => {
             <Box sx={{ display: 'flex', gap: 2, mt: 4 }}>
               <Button
                 variant="contained"
-                href="/projects"
+                component={RouterLink}
+                to="/projects"
                 sx={{
                   backgroundColor: '#FF1A1A',
                   '&:hover': {
@@ -126,7 +128,8 @@ const Home = () => {
               </Button>
               <Button
                 variant="outlined"
-                href="/contact"
+                component={RouterLink}
+                to="/contact"
                 sx={{
                   borderColor: '#FF1A1A',
                   color: '#FF1A1A',
