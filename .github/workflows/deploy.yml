@@ -28,13 +28,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm list
       
       - name: Build
-        run: npm run build
+        run: |
+          echo "Starting build process..."
+          npm run build
+          echo "Build completed"
+          ls -la dist/
+        env:
+          CI: false
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -42,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: 'dist'
       
       - name: Deploy to GitHub Pages
         id: deployment
