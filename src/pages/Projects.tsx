@@ -6,7 +6,7 @@ import BackgroundSVG from '../components/BackgroundSVG';
 import redbullCover from '../assets/images/redbullhearthcangecover.png';
 import breastCancerCover from '../assets/images/breastcancercover.png';
 import meniscalCover from '../assets/images/meniscalinjurycover.jpg';
-import playstoreCover from '../assets/images/app_analysis.jpg';
+import playstoreCover from '../assets/images/playstorecover.png';
 
 const projects = [
   {
