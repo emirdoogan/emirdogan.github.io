@@ -14,7 +14,7 @@ const projects = [
     description: 'Exploratory data analysis of Play Store applications using MySQL queries. Investigated app categories, pricing strategies, and user ratings to understand market trends and app performance patterns.',
     image: playstoreCover,
     tags: ['MySQL', 'Data Analysis', 'SQL', 'EDA'],
-    github: 'https://github.com/emirdoogan/playstore_apps_analysis',
+    github: 'https://github.com/emirdoogan/play_store_analysis_sql',
     featured: true,
   },
   {
