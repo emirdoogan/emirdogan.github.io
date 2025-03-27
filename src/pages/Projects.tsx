@@ -6,8 +6,17 @@ import BackgroundSVG from '../components/BackgroundSVG';
 import redbullCover from '../assets/images/redbullhearthcangecover.png';
 import breastCancerCover from '../assets/images/breastcancercover.png';
 import meniscalCover from '../assets/images/meniscalinjurycover.jpg';
+import playstoreCover from '../assets/images/app_analysis.jpg';
 
 const projects = [
+  {
+    title: 'Play Store App Analysis',
+    description: 'Exploratory data analysis of Play Store applications using MySQL queries. Investigated app categories, pricing strategies, and user ratings to understand market trends and app performance patterns.',
+    image: playstoreCover,
+    tags: ['MySQL', 'Data Analysis', 'SQL', 'EDA'],
+    github: 'https://github.com/emirdoogan/playstore_apps_analysis',
+    featured: true,
+  },
   {
     title: 'Red Bull Heart Rate Analysis',
     description: 'Analysis of heart rate data during Red Bull consumption, examining the physiological effects and patterns using Python and data visualization techniques.',
