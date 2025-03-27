@@ -11,7 +11,7 @@ import playstoreCover from '../assets/images/playstorecover.png';
 const projects = [
   {
     title: 'Play Store App Analysis',
-    description: 'Exploratory data analysis of Play Store applications using MySQL queries. Investigated app categories, pricing strategies, and user ratings to understand market trends and app performance patterns.',
+    description: 'Exploratory data analysis of Play Store applications using MySQL queries. Investigated app categories, user ratings, and reviews to understand market trends and app performance patterns.',
     image: playstoreCover,
     tags: ['MySQL', 'Data Analysis', 'SQL', 'EDA'],
     github: 'https://github.com/emirdoogan/play_store_analysis_sql',
