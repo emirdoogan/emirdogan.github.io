@@ -139,7 +139,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <GlobalStyles styles={customGlobalStyles} />
-      <Router basename="/emirdogan.github.io">
+      <Router>
         <Navbar />
         <AnimatePresence mode="wait">
           <Routes>
