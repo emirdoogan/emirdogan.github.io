@@ -29,18 +29,13 @@ jobs:
         with:
           node-version: 18
       
-      - name: Clean install dependencies
+      - name: Install dependencies
         run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-          npm install --legacy-peer-deps
+          npm install
+          npm ci
       
       - name: Build
-        run: |
-          echo "Starting build process..."
-          npm run build
-          echo "Build completed"
-          ls -la dist/
+        run: npm run build
         env:
           CI: false
       
@@ -50,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: './dist'
       
       - name: Deploy to GitHub Pages
         id: deployment
