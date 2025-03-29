@@ -44,12 +44,19 @@ const Navbar = () => {
             color: 'inherit',
             textDecoration: 'none',
             WebkitTapHighlightColor: 'transparent',
-            transition: 'background-color 0.3s',
+            outline: 'none',
+            transition: 'background-color 0.2s',
             '&:hover': {
               backgroundColor: 'rgba(255, 26, 26, 0.1)',
             },
             '&:active': {
+              backgroundColor: 'rgba(255, 26, 26, 0.1)',
+            },
+            '&:focus': {
               backgroundColor: 'transparent',
+            },
+            '&:focus-visible': {
+              outline: 'none',
             },
             '@media (hover: none)': {
               '&:hover': {
@@ -60,6 +67,10 @@ const Navbar = () => {
               },
               '&:focus': {
                 backgroundColor: 'transparent',
+                outline: 'none',
+              },
+              '&::after': {
+                display: 'none',
               }
             }
           }}
@@ -134,6 +145,16 @@ const Navbar = () => {
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
+        }}
+        sx={{
+          '& .MuiDrawer-paper': {
+            width: 240,
+            boxSizing: 'border-box',
+            backgroundColor: 'background.default',
+          },
+          '& *': {
+            WebkitTapHighlightColor: 'transparent',
+          }
         }}
       >
         {drawer}
