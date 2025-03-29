@@ -96,12 +96,25 @@ const Projects = () => {
                           ? '1px solid rgba(255, 26, 26, 0.3)'
                           : '1px solid rgba(255, 255, 255, 0.1)',
                         transition: 'all 0.3s ease-in-out',
-                        '&:hover': {
-                          transform: 'translateY(-8px)',
-                          boxShadow: project.featured 
-                            ? '0 8px 30px rgba(255, 26, 26, 0.2)'
-                            : '0 8px 30px rgba(0, 0, 0, 0.3)',
+                        WebkitTapHighlightColor: 'transparent',
+                        '@media (hover: hover)': {
+                          '&:hover': {
+                            transform: 'translateY(-8px)',
+                            boxShadow: project.featured 
+                              ? '0 8px 30px rgba(255, 26, 26, 0.2)'
+                              : '0 8px 30px rgba(0, 0, 0, 0.3)',
+                          }
                         },
+                        '@media (hover: none)': {
+                          '&:hover': {
+                            transform: 'none',
+                            boxShadow: 'none'
+                          },
+                          '&:active': {
+                            transform: 'none',
+                            boxShadow: 'none'
+                          }
+                        }
                       }}
                     >
                       <CardMedia
@@ -162,12 +175,21 @@ const Projects = () => {
                               sx={{
                                 color: project.featured ? '#FF1A1A' : 'text.primary',
                                 borderColor: project.featured ? '#FF1A1A' : 'text.primary',
+                                WebkitTapHighlightColor: 'transparent',
                                 '&:hover': {
                                   borderColor: project.featured ? '#B30000' : 'text.primary',
                                   backgroundColor: project.featured 
                                     ? 'rgba(255, 26, 26, 0.1)'
                                     : 'rgba(255, 255, 255, 0.05)',
                                 },
+                                '&:active': {
+                                  backgroundColor: 'transparent',
+                                },
+                                '@media (hover: none)': {
+                                  '&:hover': {
+                                    backgroundColor: 'transparent',
+                                  }
+                                }
                               }}
                             >
                               View on GitHub
