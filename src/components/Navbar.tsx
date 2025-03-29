@@ -43,6 +43,18 @@ const Navbar = () => {
           sx={{
             color: 'inherit',
             textDecoration: 'none',
+            WebkitTapHighlightColor: 'transparent',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 26, 26, 0.1)',
+            },
+            '&:active': {
+              backgroundColor: 'transparent',
+            },
+            '@media (hover: none)': {
+              '&:hover': {
+                backgroundColor: 'transparent',
+              }
+            }
           }}
         >
           <ListItemText primary={item.text} />
@@ -74,6 +86,20 @@ const Navbar = () => {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
+              sx={{
+                WebkitTapHighlightColor: 'transparent',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 26, 26, 0.1)',
+                },
+                '&:active': {
+                  backgroundColor: 'transparent',
+                },
+                '@media (hover: none)': {
+                  '&:hover': {
+                    backgroundColor: 'transparent',
+                  }
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
