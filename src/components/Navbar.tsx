@@ -106,15 +106,35 @@ const Navbar = () => {
               onClick={handleDrawerToggle}
               sx={{
                 WebkitTapHighlightColor: 'transparent',
+                outline: 'none',
+                border: 'none',
+                transition: 'background-color 0.2s',
                 '&:hover': {
                   backgroundColor: 'rgba(255, 26, 26, 0.1)',
                 },
                 '&:active': {
+                  backgroundColor: 'rgba(255, 26, 26, 0.1)',
+                },
+                '&:focus': {
                   backgroundColor: 'transparent',
+                  outline: 'none',
+                },
+                '&:focus-visible': {
+                  outline: 'none',
                 },
                 '@media (hover: none)': {
                   '&:hover': {
                     backgroundColor: 'transparent',
+                  },
+                  '&:active': {
+                    backgroundColor: 'rgba(255, 26, 26, 0.1)',
+                  },
+                  '&:focus': {
+                    backgroundColor: 'transparent',
+                    outline: 'none',
+                  },
+                  '&::after': {
+                    display: 'none',
                   }
                 }
               }}
