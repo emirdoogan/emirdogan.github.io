@@ -44,6 +44,7 @@ const Navbar = () => {
             color: 'inherit',
             textDecoration: 'none',
             WebkitTapHighlightColor: 'transparent',
+            transition: 'background-color 0.3s',
             '&:hover': {
               backgroundColor: 'rgba(255, 26, 26, 0.1)',
             },
@@ -52,6 +53,12 @@ const Navbar = () => {
             },
             '@media (hover: none)': {
               '&:hover': {
+                backgroundColor: 'transparent',
+              },
+              '&:active': {
+                backgroundColor: 'rgba(255, 26, 26, 0.1)',
+              },
+              '&:focus': {
                 backgroundColor: 'transparent',
               }
             }
