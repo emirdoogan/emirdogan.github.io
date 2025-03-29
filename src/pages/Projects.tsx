@@ -35,7 +35,7 @@ const projects = [
   },
   {
     title: 'Meniscal Injury Analysis',
-    description: 'Analysis of meniscal injuries primarily using Excel for data processing and visualization, with R utilized specifically for performing Fisher\'s exact test on treatment outcomes.',
+    description: 'Analysis of meniscal injuries primarily using Excel for data processing and visualization, with R utilized specifically for performing Fisher\'s exact test to examine relationships between injury types.',
     image: meniscalCover,
     tags: ['Excel', 'Data Analysis', 'Healthcare', 'R'],
     github: 'https://github.com/emirdoogan/meniscal_injury_analysis',
