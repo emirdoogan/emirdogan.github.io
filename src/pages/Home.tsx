@@ -84,7 +84,7 @@ const Home = () => {
                 fontSize: '1.1rem',
               }}
             >
-              Hello, I am Emir Dogan, a final-year computer engineering student passionate about 
+              Hello, I am Emir Dogan, a computer engineering graduate passionate about 
               data science and analytics. With a particular interest in healthcare data analysis, 
               I enjoy working with data across various domains to uncover insights and create 
               value through analytical approaches.
@@ -266,4 +266,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

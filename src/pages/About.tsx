@@ -4,6 +4,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import BackgroundSVG from '../components/BackgroundSVG';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const skills = [
   'Proficient in Excel and Google Sheets',
@@ -14,6 +15,12 @@ const skills = [
 
 const education = [
   {
+    title: 'Statistics Foundations Professional Certificate — Wolfram Research',
+    period: 'SEPTEMBER 2025',
+    location: 'Online',
+    description: 'I completed the Statistics Foundations Professional Certificate from Wolfram Research on Sep 1, 2025. This comprehensive program covered core statistical reasoning—descriptive statistics, probability, sampling, confidence intervals, and hypothesis testing—along with hands-on data analysis workflows in Microsoft Excel. This credential reflects practical, decision-oriented statistics skills I apply to analytics, experimentation, and reporting.',
+  },
+  {
     title: 'Google / Data Analytics Professional Certificate',
     period: 'FEBRUARY 2024 - OCTOBER 2024',
     location: 'Online',
@@ -21,9 +28,9 @@ const education = [
   },
   {
     title: 'Gazi University / Computer Engineering',
-    period: 'SEPTEMBER 2021 - Present',
+    period: 'SEPTEMBER 2021 - SEPTEMBER 2025',
     location: 'Ankara/Turkey',
-    description: 'Final year student',
+    description: 'Graduated',
   },
   {
     title: 'TOBB ETU / Industrial Engineering',
@@ -33,7 +40,22 @@ const education = [
   },
 ];
 
+const awards = [
+  {
+    title: 'Graduation Project — 3rd Place Award',
+    period: '2024-2025 Spring Term',
+    location: 'Gazi University',
+    description: 'Achieved 3rd place among all graduation projects presented at Gazi University (2024-2025 Spring Term). Collaborated with a teammate on an AI-based medical imaging project supporting academic research.',
+  },
+];
+
 const experience = [
+  {
+    title: 'Belsis, Ankara — Intern',
+    period: 'JULY 2025 - JULY 2025',
+    location: 'Ankara/Turkey',
+    description: 'Contributed as a Full-Stack Developer to an Odoo ERP project, participating in both backend and frontend development, customizing modules, integrating features, and optimizing system performance.',
+  },
   {
     title: 'Destek etc. / Intern Computer Engineer',
     period: 'JULY 2024 - AUGUST 2024',
@@ -96,7 +118,46 @@ const About = () => {
               elevation={3} 
               sx={{ 
                 p: 3, 
-                mt: 4, 
+                mt: 2, 
+                mb: 3,
+                background: 'linear-gradient(135deg, rgba(255, 26, 26, 0.1), rgba(179, 0, 0, 0.05))',
+                border: '1px solid rgba(255, 26, 26, 0.1)',
+              }}
+            >
+              <Typography
+                variant="h5"
+                gutterBottom
+                sx={{
+                  color: '#FF1A1A',
+                  fontWeight: 600,
+                  mb: 2,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                }}
+              >
+                <EmojiEventsIcon /> Awards
+              </Typography>
+              {awards.map((item, index) => (
+                <Box key={index} sx={{ mb: 2 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#FF1A1A', mb: 1 }}>
+                    {item.period} | {item.location}
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                    {item.description}
+                  </Typography>
+                </Box>
+              ))}
+            </Paper>
+
+            <Paper 
+              elevation={3} 
+              sx={{ 
+                p: 3, 
+                mt: 3, 
                 background: 'linear-gradient(135deg, rgba(255, 26, 26, 0.1), rgba(179, 0, 0, 0.05))',
                 border: '1px solid rgba(255, 26, 26, 0.1)',
               }}
@@ -142,8 +203,9 @@ const About = () => {
                 ))}
               </List>
             </Paper>
-          </Box>
+            </Box>
         </motion.div>
+
         <motion.div
           className="content-section"
           initial={{ x: 50, opacity: 0 }}
@@ -212,8 +274,26 @@ const About = () => {
                 </Box>
               ))}
             </Box>
+          </Paper>
+        </motion.div>
 
-            <Box>
+        <motion.div
+          className="content-section"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <Paper 
+            elevation={3} 
+            sx={{ 
+              p: 4,
+              height: '100%',
+              background: 'linear-gradient(135deg, rgba(255, 26, 26, 0.1), rgba(179, 0, 0, 0.05))',
+              border: '1px solid rgba(255, 26, 26, 0.1)',
+              overflowY: 'auto',
+            }}
+          >
+            <Box sx={{ mb: 6 }}>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -265,6 +345,10 @@ const About = () => {
                 </Box>
               ))}
             </Box>
+
+            <Box>
+              {/* İkinci Experience bölümü kaldırıldı */}
+            </Box>
           </Paper>
         </motion.div>
       </div>
@@ -272,4 +356,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;
